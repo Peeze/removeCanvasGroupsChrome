@@ -1,0 +1,34 @@
+{
+
+  "manifest_version": 2,
+  "name": "Remove Canvas Groups",
+  "version": "0.2.2",
+
+  "description": "Removes selected Canvas Groups from the sidebar.",
+  "homepage_url" : "https://github.com/Peeze/removeCanvasGroupsChrome",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "options_ui" : {
+      "page" : "options/groupsInfo.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["removeCanvasGroups.js"]
+    }
+  ]
+
+}
